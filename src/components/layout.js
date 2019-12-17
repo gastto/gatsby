@@ -17,7 +17,7 @@ const Layout = ({ children }) => {
     query SiteTitleQuery {
       site {
         siteMetadata {
-          title
+          title, description
         }
       }
     }
@@ -34,7 +34,7 @@ const Layout = ({ children }) => {
           paddingTop: 0,
         }}
       >
-        <main>{children}</main>
+        <main>{data.site.siteMetadata.description}{children}</main>
         <footer>
           © {new Date().getFullYear()}, Built with
           {` `}
