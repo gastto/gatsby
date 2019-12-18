@@ -32,7 +32,7 @@ const BlogPage = () => {
       <p>Este es mi blog :)</p>
       <p>Tengo en total {posts.allMarkdownRemark.totalCount} post(s)</p>
       {posts.allMarkdownRemark.edges.map(({ node }) => (
-        <Link
+        <Link key={node.id}
           to={node.fields.slug}
           style={{ textDecoration: 'none', color: '#2f2f2f' }}
         >
@@ -50,6 +50,7 @@ const BlogPage = () => {
           </article>
         </Link>
       ))}
+      <Link to="/">ir a Home</Link>
     </Layout>
   )
 }
